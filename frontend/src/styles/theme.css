@@ -1,0 +1,139 @@
+/* Fun Theme Styles */
+:root {
+  --primary-color: #6366f1;
+  --primary-hover: #4f46e5;
+  --secondary-color: #ec4899;
+  --secondary-hover: #db2777;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+  --dark-bg: #1a1b1e;
+  --dark-card: #25262b;
+  --dark-border: #2c2d31;
+}
+
+/* Theme Text */
+.theme-text {
+  @apply text-gray-900 dark:text-gray-100;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+}
+
+/* Fun Button */
+.fun-button {
+  @apply px-4 py-2 rounded-full font-medium text-white shadow-lg transform transition-all duration-300;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+}
+
+.fun-button:hover {
+  @apply shadow-xl -translate-y-0.5;
+  filter: brightness(110%);
+}
+
+.fun-button:active {
+  @apply translate-y-0 shadow-md;
+}
+
+/* Fun Card */
+.fun-card {
+  @apply bg-white dark:bg-dark-card rounded-xl shadow-lg border-2 border-transparent hover:border-primary-200 dark:hover:border-primary-800 transform transition-all duration-300;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+}
+
+.dark .fun-card {
+  background: rgba(37, 38, 43, 0.8);
+}
+
+.fun-card:hover {
+  @apply shadow-xl -translate-y-1;
+}
+
+/* Fun Icon */
+.fun-icon {
+  @apply transform transition-all duration-300;
+}
+
+.fun-icon:hover {
+  @apply scale-110 rotate-12;
+}
+
+/* Fun Badge */
+.fun-badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium transition-all duration-300;
+}
+
+.fun-badge:hover {
+  @apply scale-105;
+}
+
+/* Fun Input */
+.fun-input {
+  @apply block w-full px-4 py-2 rounded-xl border-2 border-gray-200 dark:border-dark-border bg-white dark:bg-dark-card text-gray-900 dark:text-gray-100 shadow-sm transition-all duration-300;
+}
+
+.fun-input:focus {
+  @apply outline-none border-primary-500 dark:border-primary-400 ring-2 ring-primary-200 dark:ring-primary-900;
+}
+
+.fun-input:hover {
+  @apply border-primary-300 dark:border-primary-600;
+}
+
+/* Emoji Cursor */
+.emoji-cursor {
+  cursor: pointer;
+}
+
+.emoji-cursor:hover {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>✨</text></svg>") 16 0, auto;
+}
+
+/* Animations */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Dark Mode Styles */
+.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  background-color: var(--dark-bg);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-dark-border rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-600;
+}
+
+/* Selection */
+::selection {
+  @apply bg-primary-200 dark:bg-primary-900;
+} 
